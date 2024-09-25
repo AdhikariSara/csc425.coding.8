@@ -1,30 +1,40 @@
 /*********************************************
 Your name: Sara Adhikari 
-Question 2: . Now, run free, perhaps using some of the arguments that might
+## Question 2: . Now, run free, perhaps using some of the arguments that might
 be useful (e.g., -m, to display memory totals in megabytes). How
 much memory is in your system? How much is free? Do these
 numbers match your intuition?
-<your answer>
+< Answer: The system has a total of 7938 MB of memory. Currently, only 169 MB of memory is completely free and unused.Initially, seeing only 169 MB of free memory seemed surprising because I expected more unused memory. However, after considering the large buffer/cache of 6469 MB and the total available memory of 6260 MB, it makes sense. The system is efficiently using memory for caching, and there's still plenty available for new tasks.
+>
 
-Question 4:  Now, while running your memory-user program, also (in a different terminal window, but on the same machine) run the free
+
+## Question 4:  Now, while running your memory-user program, also (in a different terminal window, but on the same machine) run the free
 tool. How do the memory usage totals change when your program
 is running? How about when you kill the memory-user program?
 Do the numbers match your expectations? Try this for different
 amounts of memory usage. What happens when you use really
 large amounts of memory?
-<your answer>
+<answer: When my memory-user program is running, I notice that the used memory goes up and the free memory goes down because the program is using more memory. After I kill the program, the used memory decreases, and the free memory increases, which is what I expected. With small memory allocations, the changes are small, but when I try to use a lot of memory, the free memory can drop very low, and the system might even start using swap space or run into errors if it runs out of memory. This all makes sense based on how much memory I'm asking the program to use.>
 
- Question 7: Now run pmap on some of these processes, using various flags (like
+ ## Question 7: Now run pmap on some of these processes, using various flags (like
 -X) to reveal many details about the process. What do you see?
 How many different entities make up a modern address space, as
 opposed to our simple conception of code/stack/heap?
-<your answer>
+<answer: When I ran the pmap command on my memory-user program, I saw detailed information about how memory is being used by the process. It showed various sections like the text segment, heap, stack, and shared libraries, along with their sizes and permissions. I noticed that there are many different memory areas, not just the code, stack, and heap.
+In a modern address space, I can see entities like:
 
- question 6 : put in what challenges you faced creating the program
-<your answer> 
+Text Segment: Where the code is stored.
+Heap: For dynamic memory.
+Stack: For function calls and local variables.
+Shared Libraries: Like libc-2.31.so, which the program uses.
+Memory Mapped Files: For files mapped into memory.
+Anonymous Mappings: For memory that doesn't correspond to any file.>
 
-Question 8:  Finally, let’s run pmap on your memory-user program, with different amounts of used memory. What do you see here? Does the
+ ## question 6 : put in what challenges you faced creating the program
+<Answer: While creating the memory-user program, I faced challenges with understanding how to allocate and manage memory properly. Debugging errors was also difficult at times, especially when I didn't know why the program wasn't working as expected. Additionally, keeping track of memory usage and ensuring everything was released correctly took some time to get right.> 
+
+## Question 8:  Finally, let’s run pmap on your memory-user program, with different amounts of used memory. What do you see here? Does the
 output from pmap match your expectations?
-<your answer>
+<Answer: When I ran pmap on the memory-user program with different amounts of used memory, I noticed that the output showed a clear increase in memory usage as I allocated more memory. The number of memory segments also increased, indicating that more space was being used for the heap and stack. This matched my expectations, as I thought that allocating more memory would lead to higher memory consumption and more entries in the output. Overall, it helped me understand how memory allocation affects the address space of a program.>
 
 *********************************************/
