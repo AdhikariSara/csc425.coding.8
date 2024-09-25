@@ -1,0 +1,30 @@
+/*********************************************
+Your name: Sara Adhikari 
+Question 2: . Now, run free, perhaps using some of the arguments that might
+be useful (e.g., -m, to display memory totals in megabytes). How
+much memory is in your system? How much is free? Do these
+numbers match your intuition?
+<your answer>
+
+Question 4:  Now, while running your memory-user program, also (in a different terminal window, but on the same machine) run the free
+tool. How do the memory usage totals change when your program
+is running? How about when you kill the memory-user program?
+Do the numbers match your expectations? Try this for different
+amounts of memory usage. What happens when you use really
+large amounts of memory?
+<your answer>
+
+ Question 7: Now run pmap on some of these processes, using various flags (like
+-X) to reveal many details about the process. What do you see?
+How many different entities make up a modern address space, as
+opposed to our simple conception of code/stack/heap?
+<your answer>
+
+ question 6 : put in what challenges you faced creating the program
+<your answer> 
+
+Question 8:  Finally, let’s run pmap on your memory-user program, with different amounts of used memory. What do you see here? Does the
+output from pmap match your expectations?
+<your answer>
+
+*********************************************/
